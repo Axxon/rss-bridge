@@ -47,6 +47,7 @@ class DiscogsBridge extends BridgeAbstract {
 						. '/releases?sort=year&sort_order=desc')
 						or returnServerError('Unable to query discogs !');
 			} elseif(!empty($this->getInput('labelid'))) {
+			    sleep(10);
 				$data = getContents('https://api.discogs.com/labels/'
 						. $this->getInput('labelid')
 						. '/releases?sort=year&sort_order=desc')
